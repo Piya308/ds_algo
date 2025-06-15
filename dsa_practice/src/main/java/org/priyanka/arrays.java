@@ -38,16 +38,18 @@ public class arrays {
 		System.out.println(testcaseArray1[testcaseArray1.length-2]);
 		
 		//solution with edgecase
-		int largestNo ;
+		int slargestNo ;
+		slargestNo = Integer.MIN_VALUE;
+
 		int[] testcaseArray2 = {2,13,4,1,2,6,28};
 		Arrays.sort(testcaseArray2); // 1,2,2,4,6,13,28
 		for(int i= testcaseArray2.length-1; i>0; i--) {
 			if(testcaseArray2[i] != testcaseArray2[i-1]) {
-				largestNo =  testcaseArray2[i-1];
+				slargestNo =  testcaseArray2[i-1];
+				break;
 			}
 		}
-		largestNo = Integer.MIN_VALUE;
-		System.out.println(largestNo);
+		System.out.println(slargestNo);
 	}
 
 }
