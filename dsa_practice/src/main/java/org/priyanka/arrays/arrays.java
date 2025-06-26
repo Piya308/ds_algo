@@ -1,4 +1,4 @@
-package org.priyanka;
+package org.priyanka.arrays;
 
 import java.util.Arrays;
 
