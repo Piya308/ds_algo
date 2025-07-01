@@ -5,6 +5,10 @@ import java.util.Arrays;
 public class problems {
     public static void main(String[] args) {
 
+        int arr[] = {1,2,3,4,1,5,2,6,5};
+        System.out.println(betterPairSum(arr, 7));
+        System.out.println(bruteForcePairsum(arr, 7));
+
     }
 
         static int betterPairSum(int[] arr, int target) {
@@ -18,7 +22,7 @@ public class problems {
                 } else if (sum > target) {
                     end--;
                 } else {
-                    start++;
+                      start++;
                 }
             }
             return count;
