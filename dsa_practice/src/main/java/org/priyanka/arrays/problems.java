@@ -5,13 +5,16 @@ import java.util.Arrays;
 public class problems {
     public static void main(String[] args) {
 
-        int arr[] = {1,2,3,4,1,5,2,6,5};
+        int arr[] = {3, 8, 6, 8};
+        System.out.println(betterFindSecondLargest(arr));
         System.out.println(betterPairSum(arr, 7));
         System.out.println(bruteForcePairsum(arr, 7));
+        swapAdjacentElements(arr);
 
     }
 
         static int betterPairSum(int[] arr, int target) {
+        //find count of sum of pair from array for given target
             int count = 0; int sum; int start = 0; int end = arr.length - 1;
             while (start < end) {
                 sum = arr[start] + arr[end];
@@ -45,7 +48,8 @@ public class problems {
         //testcase 2,13,4,1,2,6,28
         //testcase2 9,3,6,2,9
         //testcase3 6,6,6,6,6,6 ----> output default value of Integer
-        //this solution1 works for testcase1 , if all elements are same then there is no 2nd largest for this scenario this won't work
+        //this solution1 works for testcase1 ,
+        //if all elements are same then there is no 2nd largest for this scenario this won't work
         int[] testcaseArray1 = {2,13,4,1,2,6,28};
         Arrays.sort(testcaseArray1); // 1,2,2,4,6,13,28
         System.out.println(testcaseArray1[testcaseArray1.length-2]);
@@ -65,7 +69,7 @@ public class problems {
         System.out.println(slargestNo);
     }
 
-    public static int bruteforceFindSecondLargest(int[] arr) {
+    public static int betterFindSecondLargest(int[] arr) {
         int max = arr[0];
 
         int secMax = Integer.MIN_VALUE;  // Use Integer.MIN_VALUE to ensure proper comparison
@@ -73,7 +77,7 @@ public class problems {
             if(x>max){
                 secMax = max;
                 max = x;
-            }
+            }// condition &- if largest number comes twice
             else if(x< max && x > secMax){
                 secMax = x;
             }
@@ -92,3 +96,4 @@ public class problems {
         }
     }
 }
+
